@@ -5,19 +5,19 @@ import WorkflowUI
 import Layoutless
 import Inject
 
-public protocol ReactiveScreen: Screen where View.Screen == Self {
-	associatedtype View: ReactiveView
+public protocol LayoutBackingScreen: Screen where View.Screen == Self {
+	associatedtype View: UIView & LayoutProvider
 	associatedtype Strings = String
 }
 
 // MARK: -
-public extension ReactiveScreen {
+public extension LayoutBackingScreen {
 	typealias ScreenString = (Strings.Type) -> String
 
 	// MARK: Screen
 	func viewControllerDescription(environment: ViewEnvironment) -> ViewControllerDescription {
 		.init(
-			type: Inject.ViewControllerHost<ReactiveViewController<View>>.self,
+			type: Inject.ViewControllerHost<LayoutViewController<View>>.self,
 			build: { .init(.init(screen: self, environment: environment)) },
 			update: { $0.instance.update(screen: self, environment: environment) }
 		)

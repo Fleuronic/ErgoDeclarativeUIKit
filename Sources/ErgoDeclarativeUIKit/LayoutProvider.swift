@@ -4,7 +4,7 @@ import UIKit
 import Layoutless
 import WorkflowUI
 
-public protocol ReactiveView: UIView {
+public protocol LayoutProvider {
 	associatedtype Screen: WorkflowUI.Screen
 
 	func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout

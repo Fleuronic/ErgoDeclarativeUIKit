@@ -6,7 +6,7 @@ import ReactiveSwift
 import ReactiveCocoa
 import Layoutless
 
-class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Screen> {
+class LayoutViewController<View: UIView & LayoutProvider>: ScreenViewController<View.Screen> {
 	private let context = Signal<Context, Never>.pipe()
 	private let contentView: View
 
@@ -44,12 +44,12 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 }
 
 // MARK: -
-private extension ReactiveViewController {
+private extension LayoutViewController {
 	typealias Context = (View.Screen, ViewEnvironment)
 }
 
 // MARK: -
-extension ReactiveViewController: ScreenProxy {
+extension LayoutViewController: ScreenProxy {
 	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, T>) -> Property<T> {
 		.init(
 			initial: screen[keyPath: keyPath],
