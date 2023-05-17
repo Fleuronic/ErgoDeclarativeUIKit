@@ -14,6 +14,8 @@ let package = Package(
     ],
     dependencies: [
 		.package(url: "https://github.com/Fleuronic/ErgoUIKit", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Geometric", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main"),
         .package(url: "https://github.com/DeclarativeHub/Layoutless", .upToNextMajor(from: "0.4.0"))
     ],
     targets: [
@@ -21,6 +23,8 @@ let package = Package(
 			name: "ErgoDeclarativeUIKit",
 			dependencies: [
 				"ErgoUIKit",
+				"Geometric",
+				"Telemetric",
 				"Layoutless"
 			]
 		)
