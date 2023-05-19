@@ -1,11 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import WorkflowUI
 import ReactiveSwift
 
-@dynamicMemberLookup public protocol ScreenProxy<Screen> {
-	associatedtype Screen: WorkflowUI.Screen
+import protocol Ergo.ScreenBacked
 
+@dynamicMemberLookup public protocol ScreenProxy<Screen>: ScreenBacked {
 	subscript<T>(dynamicMember keyPath: KeyPath<Screen, T>) -> Property<T> { get }
 	subscript<T>(dynamicMember keyPath: KeyPath<Screen, T>) -> Property<T?> { get }
 	subscript(dynamicMember keyPath: KeyPath<Screen, () -> Void>) -> BindingTarget<Void> { get }

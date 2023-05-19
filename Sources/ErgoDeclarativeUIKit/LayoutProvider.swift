@@ -1,11 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
-import WorkflowUI
+import protocol Ergo.ScreenBacked
+import protocol Layoutless.AnyLayout
 
-public protocol LayoutProvider {
-	associatedtype Screen: WorkflowUI.Screen
-
+public protocol LayoutProvider: ScreenBacked {
 	func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout
 }

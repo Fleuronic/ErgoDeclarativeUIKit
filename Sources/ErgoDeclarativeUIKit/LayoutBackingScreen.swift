@@ -2,8 +2,9 @@
 
 import UIKit
 import WorkflowUI
-import Layoutless
 import Inject
+
+import protocol Ergo.ScreenBacked
 
 public protocol LayoutBackingScreen: Screen where View.Screen == Self {
 	associatedtype View: UIView & LayoutProvider

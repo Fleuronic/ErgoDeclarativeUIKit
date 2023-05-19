@@ -4,7 +4,8 @@ import UIKit
 import WorkflowUI
 import ReactiveSwift
 import ReactiveCocoa
-import Layoutless
+
+import protocol Ergo.ScreenBacked
 
 class LayoutViewController<View: UIView & LayoutProvider>: ScreenViewController<View.Screen> {
 	private let context = Signal<Context, Never>.pipe()
@@ -44,12 +45,13 @@ class LayoutViewController<View: UIView & LayoutProvider>: ScreenViewController<
 }
 
 // MARK: -
-private extension LayoutViewController {
-	typealias Context = (View.Screen, ViewEnvironment)
+extension LayoutViewController: ScreenBacked {
+	// MARK: ScreenBacked
+	typealias Screen = View.Screen
 }
 
-// MARK: -
 extension LayoutViewController: ScreenProxy {
+	// MARK: ScreenProxy
 	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, T>) -> Property<T> {
 		.init(
 			initial: screen[keyPath: keyPath],
@@ -81,4 +83,9 @@ extension LayoutViewController: ScreenProxy {
 			action: screen[keyPath: keyPath]
 		)
 	}
+}
+
+// MARK: -
+private extension LayoutViewController {
+	typealias Context = (View.Screen, ViewEnvironment)
 }
