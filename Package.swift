@@ -10,13 +10,18 @@ let package = Package(
 		.library(
 			name: "ErgoDeclarativeUIKit",
 			targets: ["ErgoDeclarativeUIKit"]
+		),
+		.library(
+			name: "ErgoDeclarativeUIKitTesting",
+			targets: ["ErgoDeclarativeUIKitTesting"]
 		)
     ],
     dependencies: [
 		.package(url: "https://github.com/Fleuronic/Ergo", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Inject", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Geometric", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main")
+		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main"),
+		.package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.10.0")
 	],
     targets: [
 		.target(
@@ -26,6 +31,13 @@ let package = Package(
 				"Inject",
 				"Geometric",
 				"Telemetric"
+			]
+		),
+		.target(
+			name: "ErgoDeclarativeUIKitTesting",
+			dependencies: [
+				"ErgoDeclarativeUIKit",
+				.product(name: "SnapshotTesting", package: "swift-snapshot-testing")
 			]
 		)
     ]
