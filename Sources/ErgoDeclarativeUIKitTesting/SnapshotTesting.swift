@@ -6,7 +6,7 @@ import SnapshotTesting
 
 @testable import ErgoDeclarativeUIKit
 
-public func assertView<View: UIView & LayoutProvider>(ofType type: View.Type, backedBy screen: View.Screen, matchesSnapshotIn filePath: String) {
+public func assertView<View: UIView & LayoutProvider>(ofType type: View.Type, named name: String, backedBy screen: View.Screen, matchesSnapshotIn filePath: String) {
 	XCTAssertNil(
 		verifySnapshot(
 			matching: LayoutViewController<View>(
@@ -14,12 +14,16 @@ public func assertView<View: UIView & LayoutProvider>(ofType type: View.Type, ba
 				environment: .empty
 			).view,
 			as: .image,
+			named: "Snapshot",
 			snapshotDirectory: filePath
 				.components(separatedBy: ".")
-				.dropLast(1)
-				.joined(separator: ".")
-				.replacing("/Tests", with: "/Resources"),
-			testName: "ViewLayoutSnapshot"
+					.dropLast(1)
+					.joined()
+					.components(separatedBy: "/")
+					.dropLast(1)
+					.joined(separator: "/")
+					.appending("/Resources"),
+			testName: name
 		)
 	)
 }
