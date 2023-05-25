@@ -18,6 +18,7 @@ let package = Package(
     ],
     dependencies: [
 		.package(url: "https://github.com/Fleuronic/Ergo", branch: "main"),
+        .package(url: "https://github.com/Fleuronic/ErgoUIKit", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Inject", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Geometric", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main"),
@@ -37,6 +38,7 @@ let package = Package(
 			name: "ErgoDeclarativeUIKitTesting",
 			dependencies: [
 				"ErgoDeclarativeUIKit",
+                .product(name: "ErgoUIKitTesting", package: "ErgoUIKit"),
 				.product(name: "SnapshotTesting", package: "swift-snapshot-testing")
 			]
 		)
