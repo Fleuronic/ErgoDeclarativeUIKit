@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "ErgoDeclarativeUIKit",
-    platforms: [
-        .iOS(.v15)
-    ],
-    products: [
+	name: "ErgoDeclarativeUIKit",
+	platforms: [
+		.iOS(.v15)
+	],
+	products: [
 		.library(
 			name: "ErgoDeclarativeUIKit",
 			targets: ["ErgoDeclarativeUIKit"]
@@ -15,16 +15,16 @@ let package = Package(
 			name: "ErgoDeclarativeUIKitTesting",
 			targets: ["ErgoDeclarativeUIKitTesting"]
 		)
-    ],
-    dependencies: [
+	],
+	dependencies: [
 		.package(url: "https://github.com/Fleuronic/Ergo", branch: "main"),
-        .package(url: "https://github.com/Fleuronic/ErgoUIKit", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/ErgoUIKit", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Inject", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Geometric", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Telemetric", branch: "main"),
 		.package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.10.0")
 	],
-    targets: [
+	targets: [
 		.target(
 			name: "ErgoDeclarativeUIKit",
 			dependencies: [
@@ -38,9 +38,9 @@ let package = Package(
 			name: "ErgoDeclarativeUIKitTesting",
 			dependencies: [
 				"ErgoDeclarativeUIKit",
-                .product(name: "ErgoUIKitTesting", package: "ErgoUIKit"),
+				.product(name: "ErgoUIKitTesting", package: "ErgoUIKit"),
 				.product(name: "SnapshotTesting", package: "swift-snapshot-testing")
 			]
 		)
-    ]
+	]
 )
