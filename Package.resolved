@@ -24,7 +24,7 @@
       "location" : "https://github.com/Fleuronic/Ergo",
       "state" : {
         "branch" : "main",
-        "revision" : "33042f0a43f848bef652633cb63124cdd19163a3"
+        "revision" : "b77ab8311c881ddef89140337f029a0d44f62ded"
       }
     },
     {
@@ -33,7 +33,7 @@
       "location" : "https://github.com/Fleuronic/ErgoUIKit",
       "state" : {
         "branch" : "main",
-        "revision" : "092188eac94f33363a2e468cbb65b59485d7c5bd"
+        "revision" : "24b58c2bd698148374e54228de39c5abecebd92f"
       }
     },
     {
@@ -42,7 +42,7 @@
       "location" : "https://github.com/Fleuronic/Geometric",
       "state" : {
         "branch" : "main",
-        "revision" : "dfcf23de7a1ef40502f1c294babd065bd6f3a1f7"
+        "revision" : "d8a2cd9cfa9a1bf1e307959f16c9f298c359d042"
       }
     },
     {
@@ -69,7 +69,7 @@
       "location" : "https://github.com/Fleuronic/Metric",
       "state" : {
         "branch" : "main",
-        "revision" : "5749a199367be09b3b3270f14af8b81e9e1f13a9"
+        "revision" : "a6359475ca5d3bdea880780593d1c74f5c4833e7"
       }
     },
     {
@@ -87,7 +87,7 @@
       "location" : "https://github.com/Fleuronic/ReactiveDataSources",
       "state" : {
         "branch" : "master",
-        "revision" : "70d1a5157d1a752099324c4363fecc8a5b537f11"
+        "revision" : "4a475d088786ef2a53feab4f9a8351a6614ec592"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
       "state" : {
-        "branch" : "swift-concurrency",
-        "revision" : "3d40187c982346352d0adbe6b38e0e3d53fddc95"
+        "revision" : "40c465af19b993344e84355c00669ba2022ca3cd",
+        "version" : "7.1.1"
       }
     },
     {
@@ -123,7 +123,7 @@
       "location" : "https://github.com/Fleuronic/Telemetric",
       "state" : {
         "branch" : "main",
-        "revision" : "8778c74e0880ec8b9cdbd071efd38f48f6a2f811"
+        "revision" : "f4a906ddf49f428be5c309bcdda57262bc1265f3"
       }
     },
     {
@@ -132,7 +132,7 @@
       "location" : "https://github.com/Fleuronic/workflow-swift",
       "state" : {
         "branch" : "main",
-        "revision" : "5c54471e85d8fdceea2ec28e4bee6818d20a72bb"
+        "revision" : "e6798d9e5c5fdf890fbdcdd59deaeb93257dc7d8"
       }
     }
   ],
