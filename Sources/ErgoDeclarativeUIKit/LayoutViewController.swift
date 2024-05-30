@@ -2,6 +2,7 @@
 
 import UIKit
 import WorkflowUI
+import ViewEnvironment
 import ReactiveSwift
 import ReactiveCocoa
 
