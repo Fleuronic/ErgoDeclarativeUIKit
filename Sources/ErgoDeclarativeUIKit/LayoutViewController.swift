@@ -32,9 +32,9 @@ class LayoutViewController<View: UIView & LayoutProvider>: ScreenViewController<
 	// MARK: ScreenViewController
 	required init(screen: View.Screen, environment: ViewEnvironment) {
 		contentView = .init()
-
+		
 		super.init(screen: screen, environment: environment)
-
+		
 		contentView.translatesAutoresizingMaskIntoConstraints = false
 		contentView.layout(with: self).layout(in: contentView)
 	}
